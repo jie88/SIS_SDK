@@ -1,0 +1,28 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="SISAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Customize your theme here. -->
+    <item name="colorPrimary">@color/colorPrimarySIS</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDarkSIS</item>
+    <item name="colorAccent">@color/colorAccentSIS</item>
+  </style>
+
+
+  <style name="top_bar_txt_tittle">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerInParent">true</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:textSize">@dimen/txt_size_50</item>
+  </style>
+
+  <style name="top_bar_txt_left_or_right">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerInParent">true</item>
+    <item name="android:textColor">@color/txt_color_6</item>
+    <item name="android:textSize">@dimen/txt_size_28</item>
+  </style>
+
+</resources>

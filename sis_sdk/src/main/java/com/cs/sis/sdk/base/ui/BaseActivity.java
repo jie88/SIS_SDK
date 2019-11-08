@@ -4,16 +4,18 @@ package com.cs.sis.sdk.base.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.LinearLayout;
 
 import com.cs.sis.sdk.R;
 import com.cs.sis.sdk.utils.SISLogUtil;
 import com.cs.sis.sdk.utils.ToastUtils;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 
 /**
  * author : ${CHENJIE} created at  2019-11-07 23:29 e_mail : chenjie_goodboy@163.com describle :
@@ -30,15 +32,21 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   protected Activity mContext;
 
+
+  private LayoutInflater mInflater;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
     mContext = this;
     setContentView(initContentView());
     findViews();
   }
 
   private View initContentView() {
+    mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
     mMainLayout = new LinearLayout(this);
     mMainLayout.setOrientation(LinearLayout.VERTICAL);
     topBar = initTopBar();
@@ -47,7 +55,6 @@ public abstract class BaseActivity extends AppCompatActivity {
           .MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
       mMainLayout.addView(topBar, iabParams);
     }
-    LayoutInflater mInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     mContentView = mInflater.inflate(getLayoutResId(), null);
 
@@ -68,7 +75,16 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   //初始化顶部导航栏，可重写该方法，传入自定义View
   protected View initTopBar() {
-    return null;
+    return getDefaultTopBar();
+  }
+
+
+  protected View getDefaultTopBar() {
+    //实现状态栏图标和文字颜色为暗色
+
+    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+    View topView = mInflater.inflate(R.layout.sis_view_default_top_bar, null);
+    return topView;
   }
 
   /**

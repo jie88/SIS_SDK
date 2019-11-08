@@ -1,9 +1,10 @@
 package com.cs.sis_sdk;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.cs.sis.sdk.ui.SISSetActivity;
 

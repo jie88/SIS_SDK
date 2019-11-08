@@ -1,0 +1,9 @@
+<resources>
+
+
+  <dimen name="txt_size_28">@dimen/x28</dimen>
+  <dimen name="txt_size_30">@dimen/x30</dimen>
+  <dimen name="txt_size_32">@dimen/x32</dimen>
+  <dimen name="txt_size_34">@dimen/x34</dimen>
+  <dimen name="txt_size_50">@dimen/x50</dimen>
+</resources>

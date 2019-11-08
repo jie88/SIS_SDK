@@ -2,10 +2,15 @@
           package="com.cs.sis.sdk">
 
 
-
   <application
+
       >
-    <activity android:name=".ui.SISSetActivity">
+    <activity
+
+        android:name=".ui.SISSetActivity"
+
+        android:theme="@style/SISAppTheme"
+        >
 
     </activity>
   </application>
