@@ -7,7 +7,7 @@ import com.cs.sis.sdk.base.ui.BaseListActivity;
 import com.cs.sis.sdk.bean.SetBean;
 
 /**
- * author : ${CHENJIE} created at  2019-11-07 23:39 e_mail : chenjie_goodboy@163.com describle :
+ * 设置
  */
 public class SISSetActivity extends BaseListActivity<SetBean> {
 

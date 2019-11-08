@@ -4,8 +4,9 @@ package com.cs.sis.sdk.ui;
 import com.cs.sis.sdk.R;
 import com.cs.sis.sdk.base.ui.BaseActivity;
 
+
 /**
- * author : ${CHENJIE} created at  2019-11-08 10:19 e_mail : chenjie_goodboy@163.com describle :
+ * 权限控制
  */
 public class SISPermissionActivity extends BaseActivity {
 

@@ -25,4 +25,46 @@
     <item name="android:textSize">@dimen/txt_size_40</item>
   </style>
 
+
+  <style name="permission_layout">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginLeft">@dimen/x20</item>
+    <item name="android:layout_marginRight">@dimen/x20</item>
+    <item name="android:layout_marginTop">@dimen/x50</item>
+
+  </style>
+
+  <style name="permission_txt">
+    <item name="android:layout_width">@dimen/x150</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_gravity">center_vertical</item>
+    <item name="android:textColor">@color/txt_color_3</item>
+    <item name="android:textSize">@dimen/txt_size_40</item>
+  </style>
+  <style name="permission_edit">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/y120</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:layout_gravity">center_vertical</item>
+    <item name="android:textColor">@color/txt_color_6</item>
+    <item name="android:layout_marginLeft">@dimen/x20</item>
+    <item name="android:padding">@dimen/x10</item>
+    <item name="android:background">@drawable/edt_white_bg</item>
+    <item name="android:textSize">@dimen/txt_size_40</item>
+  </style>
+
+
+  <style name="btn">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/y120</item>
+    <item name="android:layout_marginLeft">@dimen/x20</item>
+    <item name="android:layout_marginRight">@dimen/x20</item>
+    <item name="android:layout_marginTop">@dimen/x50</item>
+    <item name="android:textColor">@color/txt_color_6</item>
+    <item name="android:textSize">@dimen/txt_size_40</item>
+    <item name="android:background">@drawable/edt_white_bg</item>
+  </style>
+
+
 </resources>

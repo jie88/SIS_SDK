@@ -5,12 +5,28 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
  >
 
-  <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"
-     />
+  <Button
+      android:id="@+id/btnPermission"
+      style="@style/btn"
+      android:text="获取权限"
+      android:onClick="permission"
+      />
+
+  <Button
+      android:id="@+id/btnSet"
+      style="@style/btn"
+      android:text="设置"
+      android:onClick="set"
+      />
+
+  <Button
+      android:id="@+id/btnDemo"
+      style="@style/btn"
+      android:text="Demo"
+      android:onClick="demo"
+      />
 
 </LinearLayout>

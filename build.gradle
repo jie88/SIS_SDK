@@ -17,6 +17,23 @@ buildscript {
     }
 }
 
+ext {
+
+    compileSdkVersion = 28
+    buildToolsVersion = "28.0.3"
+    targerSdkVersion = 26
+    minSdkVersion = 19
+    versionCode = 1
+    versionName = "1.0.0"
+    supportVersion= "28.0.0"
+        //,supportVersion : "28.0.0"
+
+
+
+}
+
+
+
 allprojects {
     repositories {
         google()

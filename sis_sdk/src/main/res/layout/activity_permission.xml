@@ -2,8 +2,54 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:orientation="vertical"
+    android:background="@color/main_bg"
+    >
+
+  <LinearLayout
+      style="@style/permission_layout">
+
+    <TextView
+        style="@style/permission_txt"
+        android:text="apiKey"
+        />
+
+    <EditText
+        style="@style/permission_edit"/>
+  </LinearLayout>
 
 
+  <LinearLayout
+      style="@style/permission_layout">
+
+    <TextView
+        style="@style/permission_txt"
+        android:text="secret"
+        />
+
+    <EditText
+        style="@style/permission_edit"/>
+  </LinearLayout>
+
+
+
+  <LinearLayout
+      style="@style/permission_layout">
+
+    <TextView
+        style="@style/permission_txt"
+        android:text="sdk编号"
+        />
+
+    <EditText
+        style="@style/permission_edit"/>
+  </LinearLayout>
+
+
+
+  <Button
+      style="@style/btn"
+      android:text="确定"
+      />
 
 </LinearLayout>
