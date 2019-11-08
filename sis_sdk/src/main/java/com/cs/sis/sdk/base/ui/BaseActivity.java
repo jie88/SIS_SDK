@@ -5,16 +5,17 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.cs.sis.sdk.R;
 import com.cs.sis.sdk.utils.SISLogUtil;
 import com.cs.sis.sdk.utils.ToastUtils;
-
 
 
 /**
@@ -34,6 +35,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
   private LayoutInflater mInflater;
+
+  private TextView topTxtLeft, topTxtTitle, topTxtRight;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -79,12 +82,113 @@ public abstract class BaseActivity extends AppCompatActivity {
   }
 
 
-  protected View getDefaultTopBar() {
-    //实现状态栏图标和文字颜色为暗色
+  /**
+   * 只显示标题
+   * @param title
+   */
+  protected void initTitleTop(String title) {
+    initTop("", title, "");
+  }
 
-    getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-    View topView = mInflater.inflate(R.layout.sis_view_default_top_bar, null);
+  /**
+   * 显示左边按钮和标题
+   * @param left
+   * @param title
+   */
+  protected void initLeftTop(String left, String title) {
+    initTop(left, title, "");
+  }
+
+  /**
+   * 显示标题和右边按钮
+   * @param title
+   * @param right
+   */
+  protected void initRightTop(String title, String right) {
+    initTop("", title, right);
+  }
+
+  /**
+   * 显示左边按钮，标题，右边按钮
+   * @param left
+   * @param title
+   * @param right
+   */
+  protected void initTop(String left, String title, String right) {
+
+    if(null!=topTxtLeft) {
+      if (TextUtils.isEmpty(left)) {
+        topTxtLeft.setVisibility(View.GONE);
+      }else {
+        topTxtLeft.setText(left);
+        topTxtLeft.setVisibility(View.VISIBLE);
+
+      }
+    }else {
+      SISLogUtil.d("topTxtLeft null");
+    }
+
+
+    if(null!=topTxtTitle) {
+      if (TextUtils.isEmpty(title)) {
+        topTxtTitle.setVisibility(View.GONE);
+      }else {
+        topTxtTitle.setText(title);
+        topTxtTitle.setVisibility(View.VISIBLE);
+
+      }
+    }else {
+      SISLogUtil.d("topTxtTitle null");
+    }
+
+
+    if(null!=topTxtRight) {
+      if (TextUtils.isEmpty(right)) {
+        topTxtRight.setVisibility(View.GONE);
+      }else {
+        topTxtRight.setText(right);
+        topTxtRight.setVisibility(View.VISIBLE);
+
+      }
+    }else {
+      SISLogUtil.d("topTxtRight null");
+    }
+  }
+
+  protected View getDefaultTopBar() {
+   View topView = mInflater.inflate(R.layout.sis_view_default_top_bar, null);
+    topTxtLeft = (TextView) topView.findViewById(R.id.topTxtLeft);
+    topTxtTitle = (TextView) topView.findViewById(R.id.topTxtTitle);
+    topTxtRight = (TextView) topView.findViewById(R.id.topTxtRight);
+    topTxtLeft.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        topBarLeftClick();
+      }
+    });
+
+    topTxtRight.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        topBarRightClick();
+      }
+    });
+
     return topView;
+  }
+
+  /**
+   * 顶部栏左边点击处理，子类重写
+   */
+  protected void topBarLeftClick() {
+
+  }
+
+  /**
+   * 顶部栏右边点击处理，子类重写
+   */
+  protected void topBarRightClick() {
+
   }
 
   /**

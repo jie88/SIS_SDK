@@ -23,7 +23,14 @@ public class SISSetActivity extends BaseListActivity<SetBean> {
   }
 
   @Override
+  protected void findViews() {
+    initLeftTop("返回","设置");
+    super.findViews();
+  }
+
+  @Override
   protected void requestData() {
+
     for (int i=0;i<left.length;i++){
       SetBean bean=new SetBean(left[i],right[i]);
       mData.add(bean);

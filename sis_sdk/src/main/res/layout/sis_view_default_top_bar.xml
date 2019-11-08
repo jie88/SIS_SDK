@@ -1,30 +1,49 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:fitsSystemWindows="true"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:fitsSystemWindows="true"
     >
 
   <android.support.v7.widget.Toolbar
       android:id="@+id/toolbar"
       android:layout_width="match_parent"
-      android:layout_height="@dimen/y100"
+      android:layout_height="@dimen/y121"
       android:background="?attr/colorPrimary"
       >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="@dimen/y120">
 
 
       <TextView
+          android:id="@+id/topTxtLeft"
           style="@style/top_bar_txt_left_or_right"
-          android:text="标题"
+          android:layout_alignParentLeft="true"
           />
 
       <TextView
+          android:id="@+id/topTxtTitle"
           style="@style/top_bar_txt_tittle"
-          android:text="标题"
+
           />
+
+      <TextView
+          android:id="@+id/topTxtRight"
+          style="@style/top_bar_txt_left_or_right"
+          android:layout_alignParentRight="true"
+          />
+
+
     </RelativeLayout>
+
   </android.support.v7.widget.Toolbar>
-</FrameLayout>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/y1"
+      android:layout_alignParentBottom="true"
+      android:background="@color/black"
+      />
+</LinearLayout>

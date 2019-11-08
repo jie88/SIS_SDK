@@ -22,7 +22,7 @@
     <item name="android:layout_height">wrap_content</item>
     <item name="android:layout_centerInParent">true</item>
     <item name="android:textColor">@color/txt_color_6</item>
-    <item name="android:textSize">@dimen/txt_size_28</item>
+    <item name="android:textSize">@dimen/txt_size_40</item>
   </style>
 
 </resources>

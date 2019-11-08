@@ -6,12 +6,16 @@
 
       >
     <activity
-
         android:name=".ui.SISSetActivity"
-
         android:theme="@style/SISAppTheme"
         >
+    </activity>
 
+
+    <activity
+        android:name=".ui.SISPermissionActivity"
+        android:theme="@style/SISAppTheme"
+        >
     </activity>
   </application>
 
