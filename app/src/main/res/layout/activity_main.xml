@@ -29,4 +29,13 @@
       android:onClick="demo"
       />
 
+
+  <Button
+      android:id="@+id/btnRequest"
+      style="@style/btn"
+      android:text="请求"
+      android:onClick="request"
+      />
+
+
 </LinearLayout>

@@ -42,6 +42,10 @@ allprojects {
             url 'https://maven.google.com/'
             name 'Google'
         }
+        flatDir {
+            dirs 'libs', '../app/libs'     // aar目录
+        }
+
     }
 }
 

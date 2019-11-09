@@ -84,7 +84,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   /**
    * 只显示标题
-   * @param title
    */
   protected void initTitleTop(String title) {
     initTop("", title, "");
@@ -92,8 +91,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   /**
    * 显示左边按钮和标题
-   * @param left
-   * @param title
    */
   protected void initLeftTop(String left, String title) {
     initTop(left, title, "");
@@ -101,8 +98,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   /**
    * 显示标题和右边按钮
-   * @param title
-   * @param right
    */
   protected void initRightTop(String title, String right) {
     initTop("", title, right);
@@ -110,53 +105,50 @@ public abstract class BaseActivity extends AppCompatActivity {
 
   /**
    * 显示左边按钮，标题，右边按钮
-   * @param left
-   * @param title
-   * @param right
    */
   protected void initTop(String left, String title, String right) {
 
-    if(null!=topTxtLeft) {
+    if (null != topTxtLeft) {
       if (TextUtils.isEmpty(left)) {
         topTxtLeft.setVisibility(View.GONE);
-      }else {
+      } else {
         topTxtLeft.setText(left);
         topTxtLeft.setVisibility(View.VISIBLE);
 
       }
-    }else {
+    } else {
       SISLogUtil.d("topTxtLeft null");
     }
 
 
-    if(null!=topTxtTitle) {
+    if (null != topTxtTitle) {
       if (TextUtils.isEmpty(title)) {
         topTxtTitle.setVisibility(View.GONE);
-      }else {
+      } else {
         topTxtTitle.setText(title);
         topTxtTitle.setVisibility(View.VISIBLE);
 
       }
-    }else {
+    } else {
       SISLogUtil.d("topTxtTitle null");
     }
 
 
-    if(null!=topTxtRight) {
+    if (null != topTxtRight) {
       if (TextUtils.isEmpty(right)) {
         topTxtRight.setVisibility(View.GONE);
-      }else {
+      } else {
         topTxtRight.setText(right);
         topTxtRight.setVisibility(View.VISIBLE);
 
       }
-    }else {
+    } else {
       SISLogUtil.d("topTxtRight null");
     }
   }
 
   protected View getDefaultTopBar() {
-   View topView = mInflater.inflate(R.layout.sis_view_default_top_bar, null);
+    View topView = mInflater.inflate(R.layout.sis_view_default_top_bar, null);
     topTxtLeft = (TextView) topView.findViewById(R.id.topTxtLeft);
     topTxtTitle = (TextView) topView.findViewById(R.id.topTxtTitle);
     topTxtRight = (TextView) topView.findViewById(R.id.topTxtRight);
@@ -181,7 +173,7 @@ public abstract class BaseActivity extends AppCompatActivity {
    * 顶部栏左边点击处理，子类重写
    */
   protected void topBarLeftClick() {
-
+    onBackPressed();
   }
 
   /**

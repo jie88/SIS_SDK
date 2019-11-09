@@ -1,1 +1,1 @@
-include ':app', ':sis_sdk'
+include ':app', ':sis_sdk', ':http_lib'
