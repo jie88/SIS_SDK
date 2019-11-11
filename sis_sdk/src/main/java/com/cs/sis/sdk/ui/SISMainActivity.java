@@ -1,6 +1,8 @@
 package com.cs.sis.sdk.ui;
 
 
+import android.content.Intent;
+
 import com.cs.sis.sdk.R;
 import com.cs.sis.sdk.base.adapter.ViewHolder;
 import com.cs.sis.sdk.base.ui.BaseListActivity;
@@ -21,15 +23,21 @@ public class SISMainActivity extends BaseListActivity<String> {
     listView.addHeaderView(mainListHeadView);
     super.findViews();
     initTop("获取权限","标题","设置");
+  }
 
-
+  @Override
+  protected void topBarLeftClick() {
+    //处理顶部左边按钮点击
+    startActivity(new Intent(mContext, SISPermissionActivity.class));
 
   }
 
-//  @Override
-//  protected int getLayoutResId() {
-//    return R.layout.activity_list_main;
-//  }
+  @Override
+  protected void topBarRightClick() {
+    //处理顶部右边按钮点击
+   startActivity(new Intent(mContext, SISSetActivity.class));
+
+  }
 
   @Override
   protected int getListItemLayout() {
