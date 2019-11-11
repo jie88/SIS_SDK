@@ -1,45 +1,45 @@
 package com.cs.sis_sdk;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.cs.http_lib.net.ResultListener;
 import com.cs.http_lib.net.transaction.TransactionException;
-import com.cs.sis.sdk.base.ui.BaseActivity;
-import com.cs.sis.sdk.ui.SISPermissionActivity;
-import com.cs.sis.sdk.ui.SISSetActivity;
-import com.cs.sis.sdk.utils.SISLogUtil;
-import com.cs.sis.sdk.utils.ToastUtils;
+import com.cs.sis.sdk.SISSdkController;
+
 import com.cs.sis_sdk.protocol.LoginRequest;
 import com.cs.sis_sdk.protocol.LoginResponse;
 
 
-public class MainActivity extends BaseActivity {
-
-
+public class MainActivity extends AppCompatActivity {
+  private Activity mContext;
   @Override
-  protected int getLayoutResId() {
-    return R.layout.activity_main;
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    mContext = this;
+    setContentView(R.layout.activity_main);
+
   }
 
-  @Override
-  protected void findViews() {
-    initTitleTop("SIS demo");
-  }
 
   public void set(View view) {
-    startActivity(new Intent(MainActivity.this, SISSetActivity.class));
+    SISSdkController.getInstance().startSet(mContext);
   }
 
   public void permission(View view) {
-    startActivity(new Intent(MainActivity.this, SISPermissionActivity.class));
+    SISSdkController.getInstance().startPermission(mContext);
   }
 
 
   public void demo(View view) {
+    SISSdkController.getInstance().startDemo(mContext);
   }
 
 
@@ -49,8 +49,8 @@ public class MainActivity extends BaseActivity {
     loginRequest.send(mContext, new ResultListener<LoginResponse>(mContext) {
       @Override
       public void onSuccess(LoginResponse result) {
-        ToastUtils.showShort(mContext, result.toJson());
-        SISLogUtil.d("result " + result.toJson());
+        Toast.makeText(mContext,result.toJson(),Toast.LENGTH_SHORT);
+        Log.d("Tag","result " + result.toJson());
       }
 
       /**

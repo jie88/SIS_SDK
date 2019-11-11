@@ -4,6 +4,11 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+  <com.cs.sis.sdk.view.SISPullToRefreshView
+      android:id="@+id/pull_refresh"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
 
     <ListView
         android:id="@+id/listView"
@@ -12,6 +17,6 @@
 
         android:overScrollMode="never"
         android:scrollbars="none"/>
-
+  </com.cs.sis.sdk.view.SISPullToRefreshView>
 
 </LinearLayout>

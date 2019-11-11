@@ -5,6 +5,13 @@
   <application
 
       >
+
+    <activity
+        android:name=".ui.SISMainActivity"
+        android:theme="@style/SISAppTheme"
+        >
+    </activity>
+
     <activity
         android:name=".ui.SISSetActivity"
         android:theme="@style/SISAppTheme"

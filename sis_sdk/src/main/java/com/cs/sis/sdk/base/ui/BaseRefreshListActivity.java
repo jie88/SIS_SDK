@@ -9,29 +9,35 @@ import android.widget.ListView;
 import com.cs.sis.sdk.R;
 import com.cs.sis.sdk.base.adapter.SISQuickAdapter;
 import com.cs.sis.sdk.base.adapter.ViewHolder;
-import com.cs.sis.sdk.ui.view.MainListHeadView;
 import com.cs.sis.sdk.view.SISPullToRefreshView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-public abstract class BaseListActivity<T> extends BaseActivity {
+/**
+ *
+ * @param <T>
+ */
+public abstract class BaseRefreshListActivity<T> extends BaseActivity {
 
   protected ListView listView;
   protected List<T> mData = new ArrayList<>();
   protected SISQuickAdapter<T> listAdapter;
 
+  protected SISPullToRefreshView pullToRefreshView;
+  protected boolean isRefresh = false;//是否可刷新
+
+  protected int currentPage = 1;
 
 
   @Override
   protected int getLayoutResId() {
-    return R.layout.activity_list_base;
+    return R.layout.activity_list_refresh_base;
   }
 
   @Override
   protected void findViews() {
-
+    pullToRefreshView = $(R.id.pull_refresh);
     listView = $(R.id.listView);
     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
@@ -42,11 +48,30 @@ public abstract class BaseListActivity<T> extends BaseActivity {
         onListItemClick(mData.get(position), position);
       }
     });
+
+    pullToRefreshView.setEnablePullLoadMoreDataStatus(isRefresh);
+    pullToRefreshView.setOnFooterRefreshListener(new SISPullToRefreshView.OnFooterRefreshListener() {
+      @Override
+      public void onFooterRefresh(SISPullToRefreshView view) {
+        if (isRefresh) {
+          currentPage++;
+          loadMoreData();
+        } else {
+          showToast("无更多数据");
+        }
+        pullToRefreshView.onFooterRefreshComplete();
+      }
+    });
     initListView();
     requestData();
   }
 
 
+  /**
+   * 加载下一页数据
+   */
+  protected void loadMoreData() {
+  }
 
   private void initListView() {
     if ( getListItemLayout() <= 0) {
