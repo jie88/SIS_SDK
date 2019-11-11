@@ -1,11 +1,11 @@
 <resources>
 
   <!-- Base application theme. -->
-  <style name="SISAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+  <style name="SISAppTheme" parent="android:Theme.DeviceDefault.Light.NoActionBar">
     <!-- Customize your theme here. -->
-    <item name="colorPrimary">@color/colorPrimarySIS</item>
-    <item name="colorPrimaryDark">@color/colorPrimaryDarkSIS</item>
-    <item name="colorAccent">@color/colorAccentSIS</item>
+    <!--<item name="colorPrimary">@color/colorPrimarySIS</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDarkSIS</item>-->
+    <!--<item name="colorAccent">@color/colorAccentSIS</item>-->
   </style>
 
 

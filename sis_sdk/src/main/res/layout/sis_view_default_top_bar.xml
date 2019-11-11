@@ -5,16 +5,26 @@
               android:fitsSystemWindows="true"
     >
 
-  <android.support.v7.widget.Toolbar
-      android:id="@+id/toolbar"
+  <!--<android.support.v7.widget.Toolbar-->
+  <!--android:id="@+id/toolbar"-->
+  <!--android:layout_width="match_parent"-->
+  <!--android:layout_height="@dimen/y121"-->
+  <!--android:background="?attr/colorPrimary"-->
+  <!--&gt;-->
+
+
+  <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="@dimen/y121"
-      android:background="?attr/colorPrimary"
+      android:layout_height="@dimen/y181"
+      android:orientation="vertical"
       >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y120">
+        android:layout_height="@dimen/y120"
+        android:layout_marginLeft="@dimen/x20"
+        android:layout_marginRight="@dimen/x20"
+        >
 
 
       <TextView
@@ -38,12 +48,14 @@
 
     </RelativeLayout>
 
-  </android.support.v7.widget.Toolbar>
+    <!--</android.support.v7.widget.Toolbar>-->
 
-  <View
-      android:layout_width="match_parent"
-      android:layout_height="@dimen/y1"
-      android:layout_alignParentBottom="true"
-      android:background="@color/black"
-      />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black"
+        />
+
+  </LinearLayout>
 </LinearLayout>

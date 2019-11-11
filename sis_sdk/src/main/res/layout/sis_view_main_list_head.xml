@@ -52,4 +52,13 @@
 
   </LinearLayout>
 
+
+
+  <com.cs.sis.sdk.view.tm30.TMView1
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/y1000"
+
+      />
+
+
 </LinearLayout>

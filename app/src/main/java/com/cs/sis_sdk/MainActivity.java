@@ -4,7 +4,6 @@ package com.cs.sis_sdk;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -17,7 +16,7 @@ import com.cs.sis_sdk.protocol.LoginRequest;
 import com.cs.sis_sdk.protocol.LoginResponse;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
   private Activity mContext;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
